@@ -5,11 +5,15 @@ import { TextAreaComponent } from "./SettingBlocks";
 interface AdvancedSettingsProps {
   userSystemPrompt: string;
   setUserSystemPrompt: (value: string) => void;
+  extraModelParameters: string;
+  setExtraModelParameters: (value: string) => void;
 }
 
 const AdvancedSettings: React.FC<AdvancedSettingsProps> = ({
   userSystemPrompt,
   setUserSystemPrompt,
+  extraModelParameters,
+  setExtraModelParameters,
 }) => {
   return (
     <div>
@@ -22,6 +26,14 @@ const AdvancedSettings: React.FC<AdvancedSettingsProps> = ({
         value={userSystemPrompt}
         onChange={setUserSystemPrompt}
         placeholder={userSystemPrompt || "Default: " + DEFAULT_SYSTEM_PROMPT}
+        rows={10}
+      />
+      <TextAreaComponent
+        name="Extra Model Parameters"
+        description="Additional parameters in JSON format to send to the model. These parameters will override the existing ones."
+        value={extraModelParameters}
+        onChange={setExtraModelParameters}
+        placeholder={extraModelParameters || "{}"}
         rows={10}
       />
     </div>

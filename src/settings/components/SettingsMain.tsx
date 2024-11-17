@@ -63,6 +63,7 @@ const SettingsMain: React.FC<{ plugin: CopilotPlugin; reloadPlugin: () => Promis
       <AdvancedSettings
         {...settings}
         setUserSystemPrompt={(value) => updateSettings({ userSystemPrompt: value })}
+        setExtraModelParameters={(value) => updateSettings({ extraModelParameters: value })}
       />
     </>
   );

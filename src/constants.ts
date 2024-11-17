@@ -223,6 +223,7 @@ export const DEFAULT_SETTINGS: CopilotSettings = {
   maxTokens: 1000,
   contextTurns: 15,
   userSystemPrompt: "",
+  extraModelParameters: "",
   openAIProxyBaseUrl: "",
   openAIEmbeddingProxyBaseUrl: "",
   stream: true,
